@@ -204,7 +204,7 @@ alias cluster-status='parallel-ssh -h ~/backends.txt -i "systemctl is-active fla
 alias demo-ufw='echo "=== 1. Goi truc tiep web-01:5000 (Bi UFW chan) ===" && curl -m 3 -v http://192.168.56.11:5000 ; echo -e "\n=== 2. Goi qua HAProxy Cong 80 (Chia tai Round Robin) ===" && for i in {1..6}; do curl -s http://192.168.56.10 | grep "Phản hồi từ Node"; done'
 ```
 
-### 6. Kịch bản kiểm thử自動 5 bước Sticky & Failover (`scripts/demo-sticky.sh`)
+### 6. Kịch bản kiểm thử 5 bước Sticky & Failover (`scripts/demo-sticky.sh`)
 
 Đặt tại `/usr/local/bin/demo-sticky` trên `lb-master` để minh họa trực tiếp cơ chế giữ phiên bằng Cookie `SERVERID`, tự động chuyển đổi dự phòng (`option redispatch`) và ngưỡng chống chớp tắt (`rise 4`):
 
